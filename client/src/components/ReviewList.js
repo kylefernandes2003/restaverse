@@ -8,16 +8,16 @@ import "../Styles/review.css";
 import { useNavigate } from 'react-router-dom';
 
 const ReviewList = () => {
-    {/*const reviewId = 1;*/}
     const navigate = useNavigate();
     const [reviews, setReviews] = useState([]);
-
+    //to capture data
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
             .then(response => response.json())
             .then(data => setReviews(data));
     }, []);
 
+    //for navigation using react router dom 
     const handleReplyButtonClick = (reviewId) => {
         navigate(`/reply/${reviewId}`);
     };
@@ -25,7 +25,7 @@ const ReviewList = () => {
     const handleViewDetailsButtonClick = (reviewId) => {
         navigate(`/details/${reviewId}`);
     };
-
+    //function used to render stars for rating at the top left of review card
     const renderStars = (rating) => {
         const stars = [];
         for (let i = 0; i < rating; i++) {

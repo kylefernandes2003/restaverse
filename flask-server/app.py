@@ -14,7 +14,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Initialize JWTManager
-app.config['JWT_SECRET_KEY'] = 'your-secret-key'  # Replace with your own secret key
+app.config['JWT_SECRET_KEY'] = 'dmiwao392483'  
 app.config['JWT_TOKEN_LOCATION'] = ['cookies']
 jwt = JWTManager(app)
 
@@ -81,19 +81,9 @@ def get_review(review_id):
     else:
         return "Review not found", 404
 
-#@app.route('/reply/<int:review_id>', methods=['POST'])
-#def reply_review(review_id):
-#    data = request.get_json()
-#    reply_text = data.get('reply_text')
-#    # Add code to update the review with the reply_text
-#    # For simplicity, you can just print the reply for now
-#   print(f"Replied to Review {review_id}: {reply_text}")
-#   return jsonify({"success": True})
 @app.route('/reply/<int:review_id>', methods=['POST'])
 def reply_review(review_id):
     data = request.form.get('reply_text')
-    # Add code to update the review with the reply_text
-    # For simplicity, you can just print the reply for now
     print(f"Replied to Review {review_id}: {data}")
     return "Reply submitted successfully"
 

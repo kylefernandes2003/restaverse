@@ -1,4 +1,3 @@
-// src/components/ReplyForm.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "../Styles/ReplyForm.css";
@@ -11,6 +10,7 @@ const ReplyForm = () => {
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
 
+  //added validation for name and email field using regex(regular expressions)
   const validateName = () => {
     const nameRegex = /^[a-zA-Z\s]+$/;
     if (!nameRegex.test(name)) {

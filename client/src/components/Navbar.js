@@ -5,9 +5,6 @@ import logo1 from './logo1.svg';
 import { Link, useNavigate } from 'react-router-dom'; 
 import { useAuth } from './AuthContext';
 
- // Import Link from react-router-dom
-
-
 const Navbar = () => {
     const navRef = useRef();
     const navigate = useNavigate(); // Initialize useNavigate hook

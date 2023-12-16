@@ -2,7 +2,7 @@ import React from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import IconButton from "@mui/material/IconButton";
 import { useGoogleLogin } from "@react-oauth/google";
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom';  
 import "../Styles/login.css";
 import Typography from "@mui/material/Typography";
 import { useAuth } from "../components/AuthContext";
@@ -18,23 +18,11 @@ async function getUserInfo(codeResponse) {
   return await response.json();
 }
 
-/*async function getProtected() {
-  var response = await fetch("/protected", {
-    method: "GET",
-    credentials: "include",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .then((msg) => console.log(msg));
-}*/
 export default function Auth() {
   
   const { loggedIn, login, logout } = useAuth();
   const navigate = useNavigate();
-
+  //called when user clicks on log in 
   var googleLogin = useGoogleLogin({
     flow: 'auth-code',
     onSuccess: async (codeResponse) => {
