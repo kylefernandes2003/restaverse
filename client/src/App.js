@@ -32,10 +32,10 @@ function App() {
       <div>
           {renderNavbar()} {/* Call the renderNavbar function */}
           <Routes>
-              <Route path="/login" element={<Auth />} />
+              <Route path="/login" element={<Auth setLoggedIn={setLoggedIn} />} />
               {loggedIn ? (
                   <>
-                      <Route path="/" element={<ReviewList />} />
+                      <Route path="/review" element={<ReviewList />} />
                       <Route path="/reply/:id" element={<ReplyForm />} />
                       <Route path="/details/:id" element={<ReviewDetails />} />
                   </>

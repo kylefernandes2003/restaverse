@@ -21,7 +21,7 @@ const Navbar = () => {
         <img src={logo1} className="App-logo" alt="logo" />
       </h3>
       <nav ref={navRef}>
-        <Link to="/">Reviews</Link>
+        <Link to="/review">Reviews</Link>
         <a href="/#">About Us</a>
         {loggedIn && <button className="nav-btn2" onClick={() => navigate('/login')}>Logout</button>}
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
