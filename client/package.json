@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "prettier-plugin-tailwindcss": "^0.5.9",
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.3.6",
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
   }
 }

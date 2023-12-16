@@ -23,7 +23,7 @@ export default function Auth() {
   const { loggedIn, login, logout } = useAuth();
   const navigate = useNavigate();
   //called when user clicks on log in 
-  var googleLogin = useGoogleLogin({
+  const googleLogin = useGoogleLogin({
     flow: 'auth-code',
     onSuccess: async (codeResponse) => {
       const loginDetails = await getUserInfo(codeResponse);
@@ -53,16 +53,16 @@ export default function Auth() {
     <div className="credentials">
       {!loggedIn ? (
         <div className="loginbtn">
-          <IconButton
+            <IconButton
             color="primary"
             aria-label="add to shopping cart"
             onClick={() => googleLogin()}
-          >
+            >
             <GoogleIcon fontSize="large" />
             <Typography variant="subtitle1" style={{ marginLeft: '8px' }}>
               Log in using Google
             </Typography>
-          </IconButton>
+            </IconButton>
         </div>
       ) : (
         <button onClick={handleLogout}>Logout</button>
