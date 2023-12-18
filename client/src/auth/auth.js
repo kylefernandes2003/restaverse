@@ -29,7 +29,7 @@ export default function Auth() {
       const loginDetails = await getUserInfo(codeResponse);
       console.log('Login Details:', loginDetails);
       login();
-      navigate('/review');
+      navigate('/');
     },
   });
 

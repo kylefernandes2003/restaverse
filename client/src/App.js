@@ -35,7 +35,7 @@ function App() {
               <Route path="/login" element={<Auth setLoggedIn={setLoggedIn} />} />
               {loggedIn ? (
                   <>
-                      <Route path="/review" element={<ReviewList />} />
+                      <Route path="/" element={<ReviewList />} />
                       <Route path="/reply/:id" element={<ReplyForm />} />
                       <Route path="/details/:id" element={<ReviewDetails />} />
                   </>
